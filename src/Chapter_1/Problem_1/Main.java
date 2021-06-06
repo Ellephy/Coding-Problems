@@ -1,4 +1,4 @@
-package Chapter_1;
+package Chapter_1.Problem_1;
 
 import java.util.Arrays;
 import java.util.Map;
