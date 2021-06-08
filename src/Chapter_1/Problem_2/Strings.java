@@ -14,20 +14,11 @@ public class Strings {
     }
 
     public static char firstNonRepeatedCharacterV1(String str) {
-        if (str == null || str.isBlank()) {
+        if (str == null || str.isBlank())
             return Character.MIN_VALUE;
-        }
-
-        //List<Character> chList = new ArrayList<>();
 
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            /*if (!chList.contains(ch)) {
-                chList.add(ch);
-            } else {
-                continue;
-            }*/
-
             int count = 0;
             for (int j = 0; j < str.length(); j++) {
                 if (ch == str.charAt(j) && i != j) {
@@ -35,7 +26,6 @@ public class Strings {
                     break;
                 }
             }
-
             if (count == 0) return ch;
         }
         return Character.MIN_VALUE;
@@ -69,9 +59,8 @@ public class Strings {
     }
 
     public static char firstNonRepeatedCharacterV3(String str) {
-        if (str == null || str.isBlank()) {
+        if (str == null || str.isBlank())
             return Character.MIN_VALUE;
-        }
 
         Map<Character, Integer> chars = new LinkedHashMap<>();
 

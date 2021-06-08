@@ -29,6 +29,10 @@ public class Strings {
     }
 
     public static Map<Character, Long> countDuplicateCharactersV2(String str) {
+        if (str == null || str.isBlank()) {
+            return Collections.emptyMap();
+        }
+
         Map<Character, Long> result = str.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
@@ -37,6 +41,10 @@ public class Strings {
     }
 
     public static Map<String, Integer> countDuplicateCharactersVCP1(String str) {
+        if (str == null || str.isBlank()) {
+            return Collections.emptyMap();
+        }
+
         Map<String, Integer> result = new HashMap<>();
 
         for (int i = 0; i < str.length(); i++) {
@@ -57,6 +65,10 @@ public class Strings {
     }
 
     public static Map<String, Long> countDuplicateCharactersVCP2(String str) {
+        if (str == null || str.isBlank()) {
+            return Collections.emptyMap();
+        }
+
         Map<String, Long> result = str.codePoints()
                 .mapToObj(ch -> String.valueOf(Character.toChars(ch)))
                 .collect(Collectors.groupingBy(ch -> ch, Collectors.counting()));

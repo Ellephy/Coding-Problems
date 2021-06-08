@@ -2,7 +2,8 @@ package Chapter_1.Problem_1;
 
 import java.util.Arrays;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
+
+import static Helpers.Helpers.displayExecutionTime;
 
 public class Main {
 
@@ -41,10 +42,5 @@ public class Main {
         Map<String, Long> duplicatesV4 = Strings.countDuplicateCharactersVCP2(TEXT_CP);
         displayExecutionTime(System.nanoTime() - startTimeV4);
         System.out.println(Arrays.toString(duplicatesV4.entrySet().toArray()));
-    }
-
-    private static void displayExecutionTime(long time) {
-        System.out.println("Execution time: " + time + " ns" + " (" +
-                TimeUnit.MILLISECONDS.convert(time, TimeUnit.NANOSECONDS) + " ms)");
     }
 }
